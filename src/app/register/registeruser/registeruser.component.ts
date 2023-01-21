@@ -1,26 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators,FormBuilder } from '@angular/forms';
+import { RegisterService } from '../../registerservice/register.service';
+import { FormData } from '../../model/register.model'
+import { ToastrService } from 'ngx-toastr';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-registeruser',
   templateUrl: './registeruser.component.html',
-  styleUrls: ['./registeruser.component.css']
+  styleUrls: ['./registeruser.component.css'],
+  animations: [
+    trigger('flyInOut', [
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(300)
+      ]),
+      transition(':leave', [
+        animate(300, style({ transform: 'translateX(100%)' }))
+      ])
+    ])
+  ]
 })
 export class RegisteruserComponent implements OnInit{
-    
-
-  title = 'angular13bestcode';
- 
+  showLogin = false;
   form!: FormGroup;
-  // personalDetails!: FormGroup;
-  // addressDetails!: FormGroup;
-  // educationalDetails!: FormGroup;
-  // personal_step = false;
-  // address_step = false;
-  // education_step = false;
   currentStep = 1;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, 
+    private registerService: RegisterService,
+    private toastr: ToastrService) { }
 
   
   ngOnInit() {
@@ -62,9 +70,6 @@ export class RegisteruserComponent implements OnInit{
   get address() { return this.educationalDetails.get('address') as FormControl; }
   get total_marks() { return this.educationalDetails.get('total_marks') as FormControl; }
 
-
- 
-
   nextStep() {
     this.currentStep++;
   }
@@ -73,13 +78,27 @@ export class RegisteruserComponent implements OnInit{
     this.currentStep--;
   }
  
-  onSubmit(){
-      
+  onSubmit(){ 
     if(this.form.valid){
       console.log(this.form.value)
+      this.registerService.UserRegister(this.form.value as FormData)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.form.reset();
+          this.toastr.success('Form submitted successfully!');
+        },
+        error => {
+          console.log(error);
+          this.toastr.error('An error occurred while submitting the form.');
+        });
+      this.currentStep = 1;
+ 
+     }
     }
+
   }
 
 
 
-}
+

@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Omoefe",
+      "email": "jkomoefey23e@yahoo.co.uk",
+      "phone": "026323242343",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science",
+      "graduationDate": "12/05/2022",
+      "company": "FlexiconTech",
+      "jobTitle": "Software",
+      "startDate": "02/12/2020",
+      "endDate": "Till date"
+    },
+    {
+      "id": 2,
+      "name": "Joseph",
+      "email": "Joe@yahoo.co.uk",
+      "phone": "02123212d2343",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science",
+      "graduationDate": "12/05/2022",
+      "company": "FlexiconTech",
+      "jobTitle": "Software",
+      "startDate": "02/12/2020",
+      "endDate": "Till date"
+    },
+    {
+      "userReg": {
+        "personalDetails": {
+          "name": "qwqw",
+          "email": "dfsdf",
+          "phone": "xcvxcvx"
+        },
+        "addressDetails": {
+          "city": "fdfgdf",
+          "address": "xcvxccvx",
+          "pincode": "cxvxcvxcv"
+        },
+        "educationalDetails": {
+          "highest_qualification": "cvcvx",
+          "university": "xcvxcv",
+          "total_marks": "xcvxcvvcx"
+        }
+      },
+      "id": 3
+    },
+    {
+      "userReg": {
+        "personalDetails": {
+          "name": "Omoefe Ugboma",
+          "email": "Jkomoefey23e@yahoo.co.uk",
+          "phone": "08026426407"
+        },
+        "addressDetails": {
+          "city": "Apapa",
+          "address": "24 Akogun Street",
+          "pincode": "23401"
+        },
+        "educationalDetails": {
+          "highest_qualification": "Bachelor of Science",
+          "university": "Middlesex University",
+          "total_marks": "1233243"
+        }
+      },
+      "id": 4
+    },
+    {
+      "userReg": {
+        "personalDetails": {
+          "name": "asdasda",
+          "email": "asdasda",
+          "phone": "asdasd"
+        },
+        "addressDetails": {
+          "city": "asdasd",
+          "address": "asdasdda",
+          "pincode": "asdasdasd"
+        },
+        "educationalDetails": {
+          "highest_qualification": "sadasda",
+          "university": "asdasda",
+          "total_marks": "asdasdads"
+        }
+      },
+      "id": 5
+    },
+    {
+      "userReg": {
+        "personalDetails": {
+          "name": "rrrrrrrrrrrrr",
+          "email": "tttttttttttttttttt",
+          "phone": "sssssssssssssss"
+        },
+        "addressDetails": {
+          "city": "sssssssssssssssss",
+          "address": "ddddddddddddddddd",
+          "pincode": "ffffffffffffff"
+        },
+        "educationalDetails": {
+          "highest_qualification": "bbbbbbbbbbbbb",
+          "university": "dddddddddddddd",
+          "total_marks": "xxxxxxxxxxxxxxxxx"
+        }
+      },
+      "id": 6
+    }
+  ]
+}
