@@ -9,7 +9,8 @@
         <ul id="progressbar">
             <li [ngClass]="currentStep>=1 ? 'active ' : 'inactive'">Personal Details</li>
             <li [ngClass]="currentStep>=2 ? 'active' : 'inactive'">Social Profiles</li>
-            <li [ngClass]="currentStep==3 ? 'active' : 'inactive'">Account Setup</li>
+            <li [ngClass]="currentStep>=3 ? 'active' : 'inactive'">File Upload</li>
+            <li [ngClass]="currentStep==4 ? 'active' : 'inactive'">Account Setup</li>
         </ul>
         <!-- fieldsets -->
         <div *ngIf="currentStep  === 1" >
@@ -43,8 +44,22 @@
                 </fieldset>
             </div>
         </div>
- 
+        
         <div *ngIf="currentStep === 3">
+            <div formGroupName="addressDetails" id="msform">
+                <fieldset>
+                    <h2 class="fs-title">File Upload</h2>
+                      <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" formControlName="image" class="form-control"  (change)="onFileChange($event)">
+                      </div>
+                    <button (click)="prevStep()" class="previous action-button-previous">Previous</button>
+                    <button (click)="nextStep()" class="next action-button">Next</button>
+                </fieldset>
+            </div>
+        </div>
+
+        <div *ngIf="currentStep === 4">
             <div formGroupName="educationalDetails" id="msform">
                 <fieldset>
                     <h2 class="fs-title">Educational Details</h2>

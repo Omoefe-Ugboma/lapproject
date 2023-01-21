@@ -1,4 +1,4 @@
-export interface ContactInfo {
+ export interface ContactInfo {
     name: string;
     email: string;
     phone: string;
@@ -14,8 +14,10 @@ export interface ContactInfo {
     startDate: string;
     endDate: string;
   }
+ 
   export interface FormData {
     contactInfo: ContactInfo;
     education: Education;
     experience: Experience;
+    image: File;
   }

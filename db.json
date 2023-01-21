@@ -69,42 +69,25 @@
     {
       "userReg": {
         "personalDetails": {
-          "name": "asdasda",
-          "email": "asdasda",
-          "phone": "asdasd"
+          "name": "zxczxcz",
+          "email": "zxczxc",
+          "phone": "zxczxcz"
         },
         "addressDetails": {
-          "city": "asdasd",
-          "address": "asdasdda",
-          "pincode": "asdasdasd"
+          "city": "zzxccxzcx",
+          "address": "zxczxczx",
+          "pincode": "zxczxcz"
         },
         "educationalDetails": {
-          "highest_qualification": "sadasda",
-          "university": "asdasda",
-          "total_marks": "asdasdads"
+          "highest_qualification": "zxczcx",
+          "university": "zxczcxz",
+          "total_marks": "zxczxc"
+        },
+        "fileImage": {
+          "imagePath": ""
         }
       },
       "id": 5
-    },
-    {
-      "userReg": {
-        "personalDetails": {
-          "name": "rrrrrrrrrrrrr",
-          "email": "tttttttttttttttttt",
-          "phone": "sssssssssssssss"
-        },
-        "addressDetails": {
-          "city": "sssssssssssssssss",
-          "address": "ddddddddddddddddd",
-          "pincode": "ffffffffffffff"
-        },
-        "educationalDetails": {
-          "highest_qualification": "bbbbbbbbbbbbb",
-          "university": "dddddddddddddd",
-          "total_marks": "xxxxxxxxxxxxxxxxx"
-        }
-      },
-      "id": 6
     }
   ]
 }

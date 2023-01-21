@@ -3,6 +3,7 @@ import { FormControl,FormGroup,Validators,FormBuilder } from '@angular/forms';
 import { RegisterService } from '../../registerservice/register.service';
 import { FormData } from '../../model/register.model'
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -25,10 +26,12 @@ export class RegisteruserComponent implements OnInit{
   showLogin = false;
   form!: FormGroup;
   currentStep = 1;
+  image!: File;
 
   constructor(private formBuilder: FormBuilder, 
     private registerService: RegisterService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private router: Router) { }
 
   
   ngOnInit() {
@@ -49,10 +52,15 @@ export class RegisteruserComponent implements OnInit{
         highest_qualification: ['', Validators.required],
         university: ['', Validators.required],
         total_marks: ['',Validators.required]
+    }),
+    fileImage: this.formBuilder.group({
+      imagePath: [''],
     })
 
   })
 }
+
+
 
   get personalDetails() { return this.form.get('personalDetails') as FormGroup; }
   get name() { return this.personalDetails.get('name') as FormControl; }
@@ -64,11 +72,18 @@ export class RegisteruserComponent implements OnInit{
   get university() { return this.addressDetails.get('university') as FormControl; }
   get pincode() { return this.addressDetails.get('pincode') as FormControl; }
 
- 
   get educationalDetails() { return this.form.get('educationalDetails') as FormGroup; }
   get highest_qualification() { return this.educationalDetails.get('highest_qualification') as FormControl; }
   get address() { return this.educationalDetails.get('address') as FormControl; }
   get total_marks() { return this.educationalDetails.get('total_marks') as FormControl; }
+
+  get fileImage() { return this.form.get('fileImage') as FormGroup; }
+  get imagePath() { return this.fileImage.get('imagePath') as FormControl; }
+   
+
+  onFileChange(event:any) {
+    this.image = event.target.files[0];
+    }
 
   nextStep() {
     this.currentStep++;
